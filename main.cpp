@@ -4,6 +4,7 @@ using namespace std;
 #include <cstdlib>
 #include <clocale>
 #include "Bibliotecas/rlutil.h"
+#include "funciones.h"
 using namespace rlutil;
 
 int main()
