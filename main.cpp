@@ -12,6 +12,12 @@ int main()
      setlocale(LC_ALL,"Spanish");
 
      int opcion;
+     cont int t1=15;
+     cont int t2=9;
+
+     int participantes[15];
+     float peso_minimo[t2]={0.5, 2, 4, 5, 1, 5, 1.5, 3, 2.5 };
+     string especie[t2]={"Anchoa","Pejerrey","Bagre","Boga","Caballa","Carpa","Trucha patagónica","Dorado","Lisa"};
 
     do{
         cls();
