@@ -3,30 +3,24 @@ using namespace std;
 #include <ctime>
 #include <cstdlib>
 #include <clocale>
-#include "rlutil.h"
+#include "Bibliotecas/rlutil.h"
 #include "funciones.h"
-using namespace rlutil;
-int main()
-{
-      setlocale(LC_ALL,"Spanish");
+using namespace rlutil.h;
 
-     int opcion, i;
+int main(){
+     setlocale(LC_ALL,"Spanish");
+
+     int opcion;
      const int t1=15;
      const int t2=9;
-    int vecparticipante[]={};
-    int veccodigo[t1]={100,101,102,103,104,105,106,107,108,109,110,111,112,113,114};
-    float  veckg[]={};
-    int vechora[]={};
-     float participantes[]={};
+
+     int participantes[15];
      float peso_minimo[t2]={0.5, 2, 4, 5, 1, 5, 1.5, 3, 2.5 };
      string especie[t2]={"Anchoa","Pejerrey","Bagre","Boga","Caballa","Carpa","Trucha patagónica","Dorado","Lisa"};
 
-    ponerceroint(veccodigo, 15);
-
     do{
-       /// setBackgroundColor (BLUE);
-        cls();
-        setColor(WHITE);
+      //  cls();
+        //setColor(WHITE);
         cout << "BRIAN LARA'S FISHING TOURNAMENT "<< endl;
         cout << "--------------------------------"<< endl;
         cout << "1 - REGISTRAR CAPTURAS"<< endl;
@@ -36,45 +30,39 @@ int main()
         cout << "5 - CRÉDITOS"<< endl;
         cout << "--------------------------------"<< endl;
         cout << "0 - SALIR"<< endl;
-        cout << endl << endl << " > ";
-       // cin >> opcion;
-        opcion = getkey();
-     //   cout << "Opción elegida " << opcion << endl;
+        cout << endl << endl << " < ";
+        //cin >> opcion;
+        opcion = get.key();
+
         switch(opcion){
             case 49:
-                ingresocaptura (veccodigo, vechora, participantes, peso_minimo);
+                count << "Opción 1";
             break;
             case 50:
-
-                puntoa (veccodigo, participantes);
-                //for (i=0; i<15; i++){
-                cout << participantes[0] << endl;
-                cout << veccodigo[0] << endl;
-               // }
-           // Reporte A - Ganador de la competencia
-           // Listar por pantalla el código del pescador/a que vaya ganando la competencia
-           // y la totalidad de kilogramos capturados hasta el momento.
-
-          ///      cout << ;
+                count << "Opción 2";
             break;
             case 51:
-                cout << "Opción 3";
+                count << "Opción 3";
             break;
             case 52:
-                cout << "Opción 4";
+                count << "Opción 4";
             break;
             case 53:
-                cout << "Opción 5";
+                count << "Opción 5";
             break;
             case 48:
-              ///  return 0;
+
             break;
 
         }
-      //   cin.ignore();
-          anykey();
+            //cin.ignore();
+            anykey();
 
     }while(opcion != 48 );
+
+
+
+
 
     return 0;
 }
