@@ -5,23 +5,22 @@ using namespace std;
 #include <clocale>
 #include "Bibliotecas/rlutil.h"
 #include "funciones.h"
-using namespace rlutil;
+using namespace rlutil.h;
 
-int main()
-{
+int main(){
      setlocale(LC_ALL,"Spanish");
 
      int opcion;
-     cont int t1=15;
-     cont int t2=9;
+     const int t1=15;
+     const int t2=9;
 
      int participantes[15];
      float peso_minimo[t2]={0.5, 2, 4, 5, 1, 5, 1.5, 3, 2.5 };
      string especie[t2]={"Anchoa","Pejerrey","Bagre","Boga","Caballa","Carpa","Trucha patagónica","Dorado","Lisa"};
 
     do{
-        cls();
-        setColor(WHITE);
+      //  cls();
+        //setColor(WHITE);
         cout << "BRIAN LARA'S FISHING TOURNAMENT "<< endl;
         cout << "--------------------------------"<< endl;
         cout << "1 - REGISTRAR CAPTURAS"<< endl;
@@ -31,7 +30,7 @@ int main()
         cout << "5 - CRÉDITOS"<< endl;
         cout << "--------------------------------"<< endl;
         cout << "0 - SALIR"<< endl;
-        cout << endl; << endl << " < ";
+        cout << endl << endl << " < ";
         //cin >> opcion;
         opcion = get.key();
 
@@ -49,7 +48,7 @@ int main()
                 count << "Opción 4";
             break;
             case 53:
-                count << "Opción 5;
+                count << "Opción 5";
             break;
             case 48:
 
