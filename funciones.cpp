@@ -5,8 +5,8 @@ using namespace rlutil;
 #include "funciones.h"
 void iniciarvector (int vec[], int tam){
 int i;
-for (i=0; i<tam; i++){
-    vec[i+1]*10;
+for (i=100; i<tam; i++){
+    vec[i]=i;
 }
 }
 void ponerceroint (int vec[], int tam){
@@ -24,11 +24,12 @@ for (i=0; i<tam; i++){
 }
 
 
-void ingresocaptura (int participantes[]={}, int vecespecie[]={}, float vechora[]={}, float peso_minimo[]={}){
-
+void ingresocaptura (int vecespecie[]={}, int veccont[]={}, float participantes[]={}, float peso_minimo []={}){
+//const float peso_minimo[0.5, 2, 4, 5, 1, 5, 1.5, 3, 2.5];
 float kg, hora;
 int participante, idespecie;
 char nombreespecie;
+int c;
 cls();
 cout << "Ingrese los datos de su captura " << endl;
 cout << "--------------------------------" << endl;
@@ -49,6 +50,11 @@ while (idespecie <10 || idespecie >90){
 cout << "CODIGO ERRONEO. " << endl;
 cout << "Ingrese codigo de especie: " << endl;
 cin >> idespecie;
+for (c=0; c<9; c++){
+    if (idespecie==vecespecie[c]){
+      veccont[c]++;
+    }
+}
 }
 cout << "Ingrese la hora: " << endl;
 cin >> hora;
@@ -73,10 +79,10 @@ cin >> participante;
 }
 
 
-int buscarindice (int idespecie, int pesominimo[]){
+int buscarindice (int idespecie[], int pesominimo[]){
 int i;
 for (i=0; i<9; i++){
-    if (idespecie==pesominimo[i]){
+    if (idespecie[i]==pesominimo[i]){
         return i;
     }
 }
@@ -84,21 +90,27 @@ for (i=0; i<9; i++){
 }
 
 
-void puntoa (int veccodigo[]={},float participantes[]={}){
-int i, x, ax, ax2;
+void puntoa (int veccodigo[],float participantes[]){
+int i, x, ax=0, ax2=0;
 for (i=0; i<15; i++){
     for (x=0; x<14; x++){
-        if (participantes[i]<participantes[i+1]){
-            ax=participantes[x+1];
-            participantes[x+1]=participantes[x];
-            participantes[x]=ax;
-            ax2=veccodigo[x+1];
-            veccodigo[x+1]=veccodigo[x];
-            veccodigo[x]=ax2;
+        if (participantes[x]<participantes[x+1]){
+            ax=participantes[x];
+            participantes[x]=participantes[x+1];
+            participantes[x+1]=ax;
+            ax2=veccodigo[x];
+            veccodigo[x]=veccodigo[x+1];
+            veccodigo[x+1]=ax2;
         }
     }
 }
+cout << "El ganador es el participante: " << veccodigo[0] << endl;
+cout << "Con un total de " << participantes[0] << " kgs capturados en total."  << endl;
 }
 
-
+void puntob (int vecespecie[]={}, int veccont[]={}){
+cout << vecespecie << endl;
+cout << veccont << endl;
+cout << "----------" << endl;
+}
 

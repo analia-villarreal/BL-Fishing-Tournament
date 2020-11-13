@@ -1,3 +1,4 @@
+
 #include <iostream>
 using namespace std;
 #include <ctime>
@@ -16,15 +17,15 @@ int main()
     int vecparticipante[]={};
     int veccodigo[t1]={100,101,102,103,104,105,106,107,108,109,110,111,112,113,114};
     float  veckg[]={};
+    int vecespecie[t2]={10,20,30,40,50,60,70,80,90};
+    int veccont [t2]={};
     int vechora[]={};
-     float participantes[]={};
-     float peso_minimo[t2]={0.5, 2, 4, 5, 1, 5, 1.5, 3, 2.5 };
+     float participantes[t1]={};
+     float peso_minimo[t2]={0.5, 2, 4, 5, 1, 5, 1.5, 3, 2.5};
      string especie[t2]={"Anchoa","Pejerrey","Bagre","Boga","Caballa","Carpa","Trucha patagónica","Dorado","Lisa"};
 
-    ponerceroint(veccodigo, 15);
-
     do{
-       /// setBackgroundColor (BLUE);
+       setBackgroundColor (BLUE);
         cls();
         setColor(WHITE);
         cout << "BRIAN LARA'S FISHING TOURNAMENT "<< endl;
@@ -42,23 +43,18 @@ int main()
      //   cout << "Opción elegida " << opcion << endl;
         switch(opcion){
             case 49:
-                ingresocaptura (veccodigo, vechora, participantes, peso_minimo);
+            ingresocaptura (vecespecie, veccont, participantes, peso_minimo);
             break;
             case 50:
-
-                puntoa (veccodigo, participantes);
-                //for (i=0; i<15; i++){
-                cout << participantes[0] << endl;
-                cout << veccodigo[0] << endl;
-               // }
-           // Reporte A - Ganador de la competencia
+            // Reporte A - Ganador de la competencia
            // Listar por pantalla el código del pescador/a que vaya ganando la competencia
            // y la totalidad de kilogramos capturados hasta el momento.
 
-          ///      cout << ;
+                puntoa (veccodigo, participantes);
+
             break;
             case 51:
-                cout << "Opción 3";
+                puntob (vecespecie, veccont);
             break;
             case 52:
                 cout << "Opción 4";
@@ -67,7 +63,6 @@ int main()
                 cout << "Opción 5";
             break;
             case 48:
-              ///  return 0;
             break;
 
         }
